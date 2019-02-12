@@ -7,7 +7,11 @@ class App extends Component {
     this.socketServer = new WebSocket(url);
 
     this.socketServer.onopen = event => {
-      console.log(event);
+      this.socketServer.send(
+        JSON.stringify({
+          message: 'hello',
+        })
+      );
     };
   }
 

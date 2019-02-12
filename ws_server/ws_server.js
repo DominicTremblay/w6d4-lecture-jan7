@@ -12,6 +12,10 @@ const wss = new SocketServer.Server({ server });
 
 wss.on('connection', wsClient => {
   console.log('Client Connected');
+
+  wsClient.on('message', message => {
+    console.log(message);
+  });
 });
 
 wss.on('close', () => {

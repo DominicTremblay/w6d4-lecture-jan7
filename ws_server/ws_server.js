@@ -9,3 +9,11 @@ const server = app.listen(PORT, () => {
 });
 
 const wss = new SocketServer.Server({ server });
+
+wss.on('connection', wsClient => {
+  console.log('Client Connected');
+});
+
+wss.on('close', wsClient => {
+  console.log('Client Disconnected');
+});

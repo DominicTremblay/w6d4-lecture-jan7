@@ -1,11 +1,16 @@
 import React from 'react';
+import UserForm from './UserForm';
+import './Header.css';
 
-const Header = ({ username, online }) => {
+const Header = ({ username, online, updateUsername }) => {
   return (
     <React.Fragment>
       <header>
         <nav>
-          <h1>Awesome Chat</h1>
+          <div className="intro">
+            <h1>Awesome Chat</h1>
+            <UserForm username={username} updateUsername={updateUsername} />
+          </div>
           <div>
             <div className="user-info">
               <h4>Username: {username || 'Anonymous'}</h4>
